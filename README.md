@@ -77,8 +77,7 @@ código são verificadas automaticamente assim que são enviadas para um
 repositório. A verificação pode executar testes, analisar a qualidade do código
 e confirmar se o projeto continua compilando.
 
-Para quem está aprendendo a programar, isso é importante porque apresenta um
-retorno rápido sobre cada alteração. Em vez de descobrir um erro somente no
+Em vez de descobrir um erro somente no
 final do trabalho, a pessoa estudante consegue identificar o problema logo após
 enviar o código, corrigi-lo e acompanhar sua evolução. A prática também ajuda
 na colaboração, pois reduz o risco de uma alteração quebrar o trabalho das
