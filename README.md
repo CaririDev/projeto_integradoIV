@@ -36,6 +36,21 @@ npm run build
 O comando `npm run build` gera a pasta `dist/`, contendo a página pronta para
 ser publicada.
 
+## Publicação do build
+
+Além de validar o projeto, o workflow publica automaticamente o conteúdo de
+`dist/` no GitHub Pages quando há um `push` para a branch `main`. O endereço
+publicado aparece no resumo da execução do workflow, no ambiente
+`github-pages`.
+
+Na primeira configuração, acesse **Settings → Pages** no repositório e
+selecione **GitHub Actions** como fonte de publicação, caso essa opção ainda
+não esteja habilitada.
+
+Após o deploy, a página pública normalmente fica disponível em:
+
+`https://cariridev.github.io/projeto_integradoIV/`
+
 ## Integração contínua
 
 O workflow está em `.github/workflows/ci.yml`. Ele é executado em cada `push`
@@ -48,7 +63,8 @@ O processo realiza as seguintes etapas:
 3. instala as dependências com `npm ci`;
 4. executa o lint com `npm run lint`;
 5. executa os testes com `npm test`;
-6. gera o build com `npm run build`.
+6. gera o build com `npm run build`;
+7. envia o conteúdo de `dist/` para o GitHub Pages em pushes para `main`.
 
 Esse processo funciona como uma barreira de qualidade: uma alteração só é
 considerada válida quando mantém a estrutura esperada, passa pelos testes e
@@ -71,3 +87,17 @@ outras pessoas.
 No Empreenda Mais Elas, a integração contínua ajuda a preservar a qualidade da
 plataforma e a confiança de suas futuras usuárias, especialmente quando novas
 funcionalidades forem adicionadas.
+
+## Evidências do entregável
+
+Para documentar a implementação, devem ser incluídas no relatório:
+
+- uma captura de `.github/workflows/ci.yml`;
+- uma captura desta seção do `README.md`;
+- uma captura da aba **Actions** com uma execução concluída com sucesso;
+- uma captura do ambiente `github-pages` com o endereço publicado;
+- opcionalmente, um GIF mostrando um `push` e a execução automática do workflow.
+
+O arquivo de workflow, o README e os scripts deste repositório são as
+evidências textuais e técnicas da configuração. A execução na aba **Actions**
+será a evidência visual após o primeiro `push` para o GitHub.

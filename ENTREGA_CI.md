@@ -24,6 +24,10 @@ As ações definidas foram:
 - `npm test`: verifica o nome e o objetivo da plataforma;
 - `npm run build`: gera `dist/index.html`, representando a versão pronta para
   publicação.
+- `actions/configure-pages@v5` e `actions/upload-pages-artifact@v4`: preparam e
+  enviam o conteúdo de `dist/` para o GitHub Pages;
+- `actions/deploy-pages@v4`: publica o artefato quando o evento é um `push` para
+  a branch principal.
 
 O job roda em `ubuntu-latest`, um ambiente limpo e reproduzível fornecido pelo
 GitHub Actions. A permissão `contents: read` limita o workflow à leitura do
@@ -40,6 +44,11 @@ Esse processo contribui para a integração contínua porque cada alteração pa
 automaticamente por essas etapas. Se uma verificação falhar, o problema aparece
 na execução do workflow antes que a alteração seja incorporada à branch
 principal. Isso reduz falhas acumuladas e dá retorno rápido para a equipe.
+
+Além da validação, o workflow possui uma etapa de entrega contínua: depois que
+lint, testes e build passam em um `push` para `main`, o conteúdo de `dist/` é
+publicado no GitHub Pages. Assim, a equipe consegue acessar uma versão pública
+da página pelo endereço fornecido no resumo do deploy.
 
 ## c) Organização do README
 
