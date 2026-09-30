@@ -1,0 +1,12 @@
+{
+  "name": "empreenda-mais-elas",
+  "version": "1.0.0",
+  "description": "Projeto base textual da plataforma Empreenda Mais Elas.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node scripts/lint.mjs",
+    "test": "node --test scripts/test.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}
